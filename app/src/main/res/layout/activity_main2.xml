@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Toolbar with 'About' menu -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="Glovelingo"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp" />
+
+    <!-- Text displaying 'Choose Language' -->
+    <TextView
+        android:id="@+id/chooseLanguageText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose Language"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Language Buttons -->
+    <Button
+        android:id="@+id/englishButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="English" />
+
+    <Button
+        android:id="@+id/arabicButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Arabic" />
+
+    <Button
+        android:id="@+id/frenchButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="French" />
+
+    <!-- About Text (Initially Hidden) -->
+    <TextView
+        android:id="@+id/aboutText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About the app: Glovelingo is designed to help you learn sign language in various languages."
+        android:visibility="gone"
+        android:textSize="14sp"
+        android:paddingTop="10dp"/>
+
+    <!-- Description Button -->
+    <Button
+        android:id="@+id/descriptionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Description" />
+
+    <!-- Description Text (Initially Hidden) -->
+    <TextView
+        android:id="@+id/descriptionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text=""
+        android:textSize="14sp"
+        android:paddingTop="10dp"/>
+
+    <!-- Manual Button -->
+    <Button
+        android:id="@+id/manualButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manual" />
+
+    <!-- Top 5 Organizations Button -->
+    <Button
+        android:id="@+id/top5Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Top 5 Organizations" />
+
+</LinearLayout>
