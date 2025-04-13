@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    android:startColor="#4CAF50" <!-- Green -->
+    android:endColor="#00B8D4" <!-- Teal -->
+    android:angle="45"/>
+</selector>

@@ -3,11 +3,16 @@ package com.example.glovelingoact2;
 
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -28,6 +33,8 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade);
+        englishButton.startAnimation(fadeIn);
 
         // Initialize UI components
         aboutText = findViewById(R.id.aboutText);
@@ -40,6 +47,21 @@ public class SecondActivity extends AppCompatActivity {
         top5Button = findViewById(R.id.top5Button);
         descriptionText = findViewById(R.id.descriptionText);
         toolbar = findViewById(R.id.toolbar);
+
+        TextView title = findViewById(R.id.glovelingoTitle);
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.title_fade_scale);
+        title.startAnimation(anim);
+        TableLayout layout = findViewById(R.id.mainLayout);
+        // Make sure it has an ID
+        AnimationDrawable animBackground = (AnimationDrawable) layout.getBackground();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            animBackground.setEnterFadeDuration(1000);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            animBackground.setExitFadeDuration(1000);
+        }
+        animBackground.start();
+
 
         // Set up the toolbar
         setSupportActionBar(toolbar);
@@ -92,6 +114,8 @@ public class SecondActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+// repeat for other buttons
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

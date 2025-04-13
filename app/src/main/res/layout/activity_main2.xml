@@ -1,65 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="24dp"
+    android:background="@drawable/background"
+    android:stretchColumns="*"
+    android:id="@+id/mainLayout"
+    >
 
-    <!-- Toolbar with 'About' menu -->
+    <!-- Title with gradient and shadow -->
+    <TextView
+        android:id="@+id/glovelingoTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Glovelingo"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:textColor="@drawable/background_anim"
+
+        android:shadowColor="#55000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp" />
+
+    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:title="Glovelingo"
-        android:background="?attr/colorPrimary"
+        android:titleTextColor="#FFFFFF"
+        android:background="@color/primaryTeal"
         android:elevation="4dp" />
 
-    <!-- Text displaying 'Choose Language' -->
+    <!-- Choose language text -->
     <TextView
         android:id="@+id/chooseLanguageText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Choose Language"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:textColor="@color/textPrimary"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"/>
 
     <!-- Language Buttons -->
     <Button
+        style="@style/GloveButton"
         android:id="@+id/englishButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:text="English" />
 
     <Button
+        style="@style/GloveButton"
         android:id="@+id/arabicButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:text="Arabic" />
 
     <Button
+        style="@style/GloveButton"
         android:id="@+id/frenchButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:text="French" />
 
-    <!-- About Text (Initially Hidden) -->
+    <!-- About Section -->
     <TextView
         android:id="@+id/aboutText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="About the app: Glovelingo is designed to help you learn sign language in various languages."
         android:visibility="gone"
+        android:text="About the app: Glovelingo is designed to help you learn sign language in various languages."
         android:textSize="14sp"
-        android:paddingTop="10dp"/>
+        android:paddingTop="12dp"
+        android:textColor="@color/textPrimary"
+        android:fontFamily="@font/poppins"/>
+
+    <!-- Top 5 Button -->
+    <Button
+        style="@style/GloveButton"
+        android:id="@+id/top5Button"
+        android:text="Top 5 Organizations" />
 
     <!-- Description Button -->
     <Button
+        style="@style/GloveButton"
         android:id="@+id/descriptionButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:text="Description" />
 
-    <!-- Description Text (Initially Hidden) -->
+    <!-- Description Text -->
     <TextView
         android:id="@+id/descriptionText"
         android:layout_width="match_parent"
@@ -67,20 +99,39 @@
         android:visibility="gone"
         android:text=""
         android:textSize="14sp"
-        android:paddingTop="10dp"/>
+        android:paddingTop="10dp"
+        android:textColor="@color/textPrimary"
+        android:fontFamily="@font/poppins"/>
 
-    <!-- Manual Button -->
-    <Button
-        android:id="@+id/manualButton"
+    <!-- Manual Button & Description Side by Side -->
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Manual" />
+        android:gravity="center"
+        android:paddingTop="16dp">
 
-    <!-- Top 5 Organizations Button -->
-    <Button
-        android:id="@+id/top5Button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Top 5 Organizations" />
+        <Button
+            android:id="@+id/manualButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Manual"
+            android:background="@drawable/rounded_button"
+            android:padding="12dp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/poppins" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/manualDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Manual description"
+            android:background="@drawable/rounded_button"
+            android:padding="12dp"
+            android:layout_marginStart="12dp"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins"/>
+    </LinearLayout>
+
+</TableLayout>
